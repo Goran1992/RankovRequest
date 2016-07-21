@@ -27,9 +27,9 @@ public class myFirebaseMessagingService extends FirebaseMessagingService {
         super.onMessageReceived(remoteMessage);
         Log.d("onMessageReceived", "Pozvana funkcija onMessageReceived");
         Log.d(TAG, "From " + remoteMessage.getFrom());
-        Log.d(TAG, "Body " + remoteMessage.getNotification().getBody());
-        Log.d(TAG, "Lokacija " + remoteMessage.getNotification().getClickAction());
-        Log.d(TAG, "Value " + remoteMessage.getData().get("click_action"));
+//        Log.d(TAG, "Body " + remoteMessage.getNotification().getBody());
+//        Log.d(TAG, "Lokacija " + remoteMessage.getNotification().getClickAction());
+        Log.d(TAG, "Value " + remoteMessage.getData().get("message"));
         sendNotification(remoteMessage);
         Log.d("Pozvana funkcija", "sendNotification");
     }
@@ -42,7 +42,7 @@ public class myFirebaseMessagingService extends FirebaseMessagingService {
         Uri defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         NotificationCompat.Builder notification=new NotificationCompat.Builder(this)
                 .setSmallIcon(logo)
-                .setContentText(remoteMessage.getNotification().getBody())
+                .setContentText(remoteMessage.getData().get("message"))
                 .setContentTitle("Naslov")
                 .setAutoCancel(true)
                 .setSound(defaultSoundUri)

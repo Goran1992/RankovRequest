@@ -10,11 +10,18 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.firebase.messaging.FirebaseMessagingService;
+import com.google.firebase.messaging.RemoteMessage;
+import com.google.gson.Gson;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
     Button dugme, dugme2, dugme3;
+    String SENDER_ID = "210091496568";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +32,34 @@ public class MainActivity extends AppCompatActivity {
         String msg = getIntent().getStringExtra("click_action");
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        dugme3=(Button)findViewById(R.id.UpstreamMessage);
+        dugme3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    Map data = new HashMap();
+                    data.put("message","Upstream message.");
+                    Gson datajson = new Gson();
+                    datajson.toJson(data);
+                    FirebaseMessaging fm = FirebaseMessaging.getInstance();
+                    fm.send(new RemoteMessage.Builder(SENDER_ID + "@gcm.googleapis.com")
+//                            .setMessageId(String.valueOf(msgId))
+                            .addData("action","message")
+                            .addData("data","{\"message\":\"Upstream Message\"}")
+                            .build());
+
+                    Log.d("FirebaseUpstream", "token: " + FirebaseInstanceId.getInstance().getToken());
+                    Log.d("FirebaseUpstream", "upstream poruka je otisla na : " +SENDER_ID );
+
+
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+
+
+            }
+
+        });
 
 
         if (msg != null) {
