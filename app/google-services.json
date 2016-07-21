@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "210091496568",
+    "firebase_url": "https://frag-not.firebaseio.com",
+    "project_id": "frag-not",
+    "storage_bucket": "frag-not.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:210091496568:android:4a43de8469d6e715",
+        "android_client_info": {
+          "package_name": "com.example.dev3.notifikacijefragmenti"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "210091496568-iht6a4htfjicdcu9r3of0ij14dec85uk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAbqjnhq2V81zRGXsNJZPrCCVMo9feJYCY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

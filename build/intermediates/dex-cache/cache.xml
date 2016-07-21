@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/home/dev3/Downloads/Notifikacije+fragmenti/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="6e8cdd29b07b4c0319a5285bec2ef0e04a35190b">
+        <dex dex="/home/dev3/Downloads/Notifikacije+fragmenti/app/build/intermediates/pre-dexed/debug/instant-run-bootstrap_b4c6ef6d3076047441546981d04a5196266263a1.jar" />
+    </item>
+
+</items>
